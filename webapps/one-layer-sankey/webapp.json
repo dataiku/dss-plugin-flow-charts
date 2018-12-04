@@ -1,7 +1,7 @@
 {
     "meta": {
         "label": "Sankey: bipartite",
-        "description": "Simple, one-layer Sankey chart",
+        "description": "Use this chart to visualize connections between 2 sets",
         "icon": "icon-bar-chart"
     },
 

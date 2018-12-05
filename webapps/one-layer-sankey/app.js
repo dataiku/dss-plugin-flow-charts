@@ -7,18 +7,28 @@ let min_weight = dataiku.getWebAppConfig()['min_weight'] || 0;
 
 let allRows;
 let dataReady, chartReady;
-google.charts.load('current', {'packages':['sankey']});
-google.charts.setOnLoadCallback(function() {
-    chartReady = true;
-    start();
-});
-dataiku.fetch(dataset, sampling, function(dataFrame) {
-    allRows = dataFrame.mapRecords(r => [r.from, r.to, +r.weight]).filter(r => r[2] > min_weight);
-    dataReady = true;
-    start()
-}); 
+
+function main() {
+    try {
+        dataiku.checkWebAppParameters();
+    } catch (e) {
+        alert(e.message + ' Go to settings tab');
+        return;
+    }
+    google.charts.load('current', {'packages':['sankey']});
+    google.charts.setOnLoadCallback(function() {
+        chartReady = true;
+        start();
+    });
+    dataiku.fetch(dataset, sampling, function(dataFrame) {
+        allRows = dataFrame.mapRecords(r => [r.from, r.to, +r.weight]).filter(r => r[2] > min_weight);
+        dataReady = true;
+        start()
+    }); 
+}
 
 function start() {
+    
     if (!chartReady || !dataReady) {
         return;
     }

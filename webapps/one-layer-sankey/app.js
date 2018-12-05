@@ -50,4 +50,6 @@ function draw() {
     chart.draw(data, {});
 }
     
-})()
+main();
+    
+})();

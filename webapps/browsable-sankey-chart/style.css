@@ -1,0 +1,26 @@
+@font-face {
+    font-family : SourceSansPro;
+    src : url(/static/dataiku/fonts/SourceSansPro-Light.otf);
+    font-weight: 300;
+}
+@font-face {
+    font-family : SourceSansPro;
+    src : url(/static/dataiku/fonts/SourceSansPro-Bold.otf);
+    font-weight: 600;
+}
+h1 {
+    font-family: 'SourceSansPro';
+    font-weight: 300;
+    font-size: 22px;
+}
+#sankey {
+    width: 90vw;
+    height: 90vh;
+    margin: 0 auto;
+}
+rect {
+    cursor: pointer;
+}
+g.google-visualization-tooltip {
+    opacity: 0.7;
+}

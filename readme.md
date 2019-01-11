@@ -1,4 +1,4 @@
-# Flow charts
+# Flow charts plugin
 
 This Dataiku DSS plugin helps you create, without code, charts to visualise transfers, transitions or other types of flow.
 

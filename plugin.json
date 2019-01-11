@@ -2,12 +2,12 @@
     "id" : "sankey-charts",
     "version" : "0.0.1",
     "meta" : {
-        "label" : "Plugin Sankey charts",
-        "description" : "Provides several flavors of Sankey charts",
+        "label" : "Flow charts (including Sankey)",
+        "description" : "Provides visualisations of flowseveral flavors of Sankey charts, a visualization of flows",
         "author" : "Dataiku",
         "icon" : "icon-puzzle-piece",
         "licenseInfo" : "Apache Software License",
-        "url" : "https://www.dataiku.com",
+        "url" : "https://www.dataiku.com/dss/plugins/info/flow-charts.html",
         "tags" : ["chart"]
     }
 }

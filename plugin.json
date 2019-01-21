@@ -8,6 +8,6 @@
         "icon" : "icon-code-fork",
         "licenseInfo" : "Apache Software License",
         "url" : "https://www.dataiku.com/dss/plugins/info/flow-charts.html",
-        "tags" : ["chart"]
+        "tags" : ["Visualization", "Flow"]
     }
 }

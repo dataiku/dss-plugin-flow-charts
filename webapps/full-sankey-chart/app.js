@@ -39,15 +39,9 @@ function load() {
     data.addColumn('string', 'From');
     data.addColumn('string', 'To');
     data.addColumn('number', 'Weight');
-    let pre = allRows
+    let rows = allRows
         .sort((a, b) => b[2] - a[2])
         .slice(0, max_links)
-//     let post = allRows
-//         .map(r => [r[0], r[1]+' ', r[2]])
-//         .sort((a, b) => b[2] - a[2])
-//         .slice(0, max_links)
-//     rows = pre.concat(post);
-    rows=pre;
     data.addRows(rows);
    
     let chart = new google.visualization.Sankey(document.getElementById('sankey'));

@@ -46,11 +46,6 @@ function load() {
    
     let chart = new google.visualization.Sankey(document.getElementById('sankey'));
     chart.draw(data);
-//     google.visualization.events.addListener(chart, 'select', function() {
-//         if (chart.getSelection()[0].name) {
-//             loadState(chart.getSelection()[0].name.trim())
-//         }
-//     });
 }
     
 })()

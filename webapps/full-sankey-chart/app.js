@@ -48,15 +48,9 @@ function load() {
         .slice(0, max_links)
     rows = pre.concat(post);
     data.addRows(rows);
-    let options = {
-        sankey: {
-            node: {
-                interactivity: true
-            }
-        }
-    };
+   
     let chart = new google.visualization.Sankey(document.getElementById('sankey'));
-    chart.draw(data, options);
+    chart.draw(data);
     google.visualization.events.addListener(chart, 'select', function() {
         if (chart.getSelection()[0].name) {
             loadState(chart.getSelection()[0].name.trim())

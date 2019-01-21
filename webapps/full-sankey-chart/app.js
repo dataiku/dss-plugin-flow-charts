@@ -4,8 +4,7 @@ let dataset = dataiku.getWebAppConfig()['dataset'];
 let sampling = {};
 let max_links = dataiku.getWebAppConfig()['max_links'] || 12;
 let min_weight = dataiku.getWebAppConfig()['min_weight'] || 0;
-    
-  
+
 let allRows;
 let dataReady, chartReady;
 google.charts.load('current', {'packages':['sankey']});

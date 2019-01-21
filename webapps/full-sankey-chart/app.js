@@ -22,10 +22,6 @@ function start() {
     if (!chartReady || !dataReady) {
         return;
     }
-    load();
-}
-    
-function load() {
     let data = new google.visualization.DataTable();
     data.addColumn('string', 'From');
     data.addColumn('string', 'To');

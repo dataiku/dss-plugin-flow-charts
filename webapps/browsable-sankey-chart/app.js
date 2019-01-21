@@ -1,9 +1,9 @@
 (function() {
     
-let dataset = getWebAppConfig()['dataset'];
+let dataset = getWebappConfig()['dataset'];
 let sampling = {};
-let max_links = getWebAppConfig()['max_links'] || 12;
-let min_weight = getWebAppConfig()['min_weight'] || 0;
+let max_links = getWebappConfig()['max_links'] || 12;
+let min_weight = getWebappConfig()['min_weight'] || 0;
     
   
 let allRows;

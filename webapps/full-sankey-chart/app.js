@@ -34,17 +34,15 @@ function getMostCommonSource() {
     return Object.keys(counts).reduce(reducer, -Infinity)
 }
     
-function loadState(stateName) {
+function load() {
     let data = new google.visualization.DataTable();
     data.addColumn('string', 'From');
     data.addColumn('string', 'To');
     data.addColumn('number', 'Weight');
     let pre = allRows
-        .filter(r => r[1] == stateName && r[0] != stateName)
         .sort((a, b) => b[2] - a[2])
         .slice(0, max_links)
     let post = allRows
-        .filter(r => r[0] == stateName && r[1] != stateName)
         .map(r => [r[0], r[1]+' ', r[2]])
         .sort((a, b) => b[2] - a[2])
         .slice(0, max_links)

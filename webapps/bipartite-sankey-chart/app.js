@@ -28,14 +28,9 @@ function main() {
 }
 
 function start() {
-    
     if (!chartReady || !dataReady) {
         return;
     }
-    draw();
-}
-
-function draw() {
     let data = new google.visualization.DataTable();
     data.addColumn('string', 'From');
     data.addColumn('string', 'To');

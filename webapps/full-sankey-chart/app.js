@@ -1,5 +1,5 @@
 (function() {
-    
+
 let dataset = dataiku.getWebAppConfig()['dataset'];
 let sampling = {};
 let max_links = dataiku.getWebAppConfig()['max_links'] || 12;

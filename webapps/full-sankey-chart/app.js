@@ -22,7 +22,7 @@ function start() {
     if (!chartReady || !dataReady) {
         return;
     }
-    loadState(getMostCommonSource());
+    load();
 }
 
 function getMostCommonSource() {

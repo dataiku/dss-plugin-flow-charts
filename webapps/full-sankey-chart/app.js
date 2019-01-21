@@ -24,15 +24,6 @@ function start() {
     }
     load();
 }
-
-// function getMostCommonSource() {
-//     let counts = {}
-//     allRows.forEach(r => {
-//         counts[r[0]] = (counts[r[0]]||0) + 1;
-//     });
-//     let reducer = (x, curr) => counts[x] > counts[curr] ? x : curr;
-//     return Object.keys(counts).reduce(reducer, -Infinity)
-// }
     
 function load() {
     let data = new google.visualization.DataTable();

@@ -1,7 +1,7 @@
 {
     "meta": {
         "label": "Sankey: full",
-        "description": "Non-browsable Sankey chart showing the whole hierarchy",
+        "description": "Non-browsable Sankey chart showing the whole flow",
         "icon": "icon-bar-chart"
     },
     "baseType": "STANDARD",

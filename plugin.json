@@ -3,7 +3,7 @@
     "version" : "0.0.1",
     "meta" : {
         "label" : "Flow charts (including Sankey)",
-        "description" : "Provides visualisations of flowseveral flavors of Sankey charts, a visualization of flows",
+        "description" : "Provides visualisations of flow. Several flavors of Sankey charts are provided",
         "author" : "Dataiku",
         "icon" : "icon-puzzle-piece",
         "licenseInfo" : "Apache Software License",

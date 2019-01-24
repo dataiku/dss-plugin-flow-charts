@@ -1,5 +1,5 @@
 {
-    "id" : "sankey-charts",
+    "id" : "flow-charts",
     "version" : "0.0.1",
     "meta" : {
         "label" : "Flow charts (including Sankey)",

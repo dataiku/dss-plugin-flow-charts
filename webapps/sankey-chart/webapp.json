@@ -1,7 +1,7 @@
 {
     "meta": {
-        "label": "Sankey: bipartite",
-        "description": "Use this chart to visualize connections between 2 sets",
+        "label": "Sankey chart",
+        "description": "Flow diagram where the width of the edges is proportitional to their importances. (cycles not supoported)",
         "icon": "icon-bar-chart"
     },
 
@@ -45,13 +45,6 @@
             "type": "INT",
             "label": "Max number of links",
             "defaultValue": 12,
-            "mandatory": false
-        },
-        {
-            "name": "min_weight",
-            "type": "INT",
-            "label": "Min weight",
-            "defaultValue": 0,
             "mandatory": false
         }
     ],

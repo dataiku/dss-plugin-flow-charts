@@ -1,29 +1,4 @@
-(function() {
-    
-let dataset = dataiku.getWebAppConfig()['dataset'];
-let sampling = {};
-let max_links = dataiku.getWebAppConfig()['max_links'] || 12;
-let min_weight = dataiku.getWebAppConfig()['min_weight'] || 0;
-    
-  
 let allRows;
-let dataReady, chartReady;
-google.charts.load('current', {'packages':['sankey']});
-google.charts.setOnLoadCallback(function() {
-    chartReady = true;
-    start();
-});
-dataiku.fetch(dataset, sampling, function(dataFrame) {
-    allRows = dataFrame.mapRecords(r => [r.from, r.to, +r.weight]).filter(r => r[2] > min_weight);
-    dataReady = true;
-    start()
-});
-function start() {
-    if (!chartReady || !dataReady) {
-        return;
-    }
-    loadState(getMostCommonSource());
-}
 
 function getMostCommonSource() {
     let counts = {}
@@ -33,8 +8,13 @@ function getMostCommonSource() {
     let reducer = (x, curr) => counts[x] > counts[curr] ? x : curr;
     return Object.keys(counts).reduce(reducer, -Infinity)
 }
-    
+
+
 function loadState(stateName) {
+    const cfg = dataiku.getWebAppConfig();
+    const max_links = cfg['max_links'] || 12;
+    const min_weight = cfg['min_weight'] || 0;
+    
     let data = new google.visualization.DataTable();
     data.addColumn('string', 'From');
     data.addColumn('string', 'To');
@@ -49,6 +29,9 @@ function loadState(stateName) {
         .sort((a, b) => b[2] - a[2])
         .slice(0, max_links)
     rows = pre.concat(post);
+    if (!rows.length) {
+        return webappMessages.displayFatalError('Nothing to display.');
+    }
     data.addRows(rows);
     let options = {
         sankey: {
@@ -66,4 +49,7 @@ function loadState(stateName) {
     });
 }
     
-})()
+initSankey( (data) => {
+    allRows = data;
+    loadState(getMostCommonSource()); 
+});

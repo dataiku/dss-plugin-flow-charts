@@ -1,12 +1,10 @@
-# Flow charts plugin
+# Flow charts
 
 This Dataiku DSS plugin helps you create, without code, charts to visualise transfers, transitions or other types of flow.
 
-For now, it contains several webapps.
+It contains several webapps for different flavors of the Sankey chart.
 
-## Documentation
-
-https://www.dataiku.com/dss/plugins/info/flow-charts.html
+The charts are based on the [Google Charts library](https://developers.google.com/chart/) and requires internet access.
 
 ## License 
 

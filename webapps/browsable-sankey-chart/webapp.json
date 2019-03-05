@@ -11,9 +11,33 @@
             "name": "dataset",
             "type": "DATASET",
             "label": "Dataset",
-            "description": "Must have columns 'from', 'to' and 'weight'",
+            "description": "",
             "mandatory": true,
             "canSelectForeign": true
+        },
+        {
+            "name": "from_col",
+            "type": "DATASET_COLUMN",
+            "datasetParamName": "dataset",
+            "label": "Origin column",
+            "description": "",
+            "mandatory": true
+        },
+        {
+            "name": "to_col",
+            "type": "DATASET_COLUMN",
+            "datasetParamName": "dataset",
+            "label": "Destination column",
+            "description": "",
+            "mandatory": true
+        },
+        {
+            "name": "weight_col",
+            "type": "DATASET_COLUMN",
+            "datasetParamName": "dataset",
+            "label": "Weight column",
+            "description": "",
+            "mandatory": false
         },
         {
             "name": "max_links",

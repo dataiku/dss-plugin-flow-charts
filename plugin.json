@@ -1,13 +1,13 @@
 {
-    "id" : "flow-charts",
-    "version" : "0.0.1",
-    "meta" : {
-        "label" : "Flow charts (including Sankey)",
-        "description" : "Provides visualisations of flow. Several flavors of Sankey charts are provided",
-        "author" : "Dataiku",
-        "icon" : "icon-code-fork",
-        "licenseInfo" : "Apache Software License",
-        "url" : "https://www.dataiku.com/dss/plugins/info/flow-charts.html",
-        "tags" : ["Visualization"]
+    "id": "flow-charts",
+    "version": "0.1.0",
+    "meta": {
+        "label": "Sankey charts",
+        "description": "Use sankey charts to visualize flows",
+        "author": "Dataiku (Joachim Zentici)",
+        "icon": "icon-bar-chart",
+        "licenseInfo": "Apache Software License",
+        "url": "https://www.dataiku.com/dss/plugins/info/flow-charts.html",
+        "tags": ["Visualization"]
     }
 }

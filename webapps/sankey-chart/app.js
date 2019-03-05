@@ -2,7 +2,7 @@ let allRows;
 
 function draw() {
     const cfg = dataiku.getWebAppConfig();
-    const max_links = cfg['max_links'] || 12;
+//     const max_links = cfg['max_links'] || 12;
     const min_weight = cfg['min_weight'] || 0;
     
     let data = new google.visualization.DataTable();
@@ -11,12 +11,7 @@ function draw() {
     data.addColumn('number', 'Weight');
     let rows = allRows
         .filter(r => r[2] > min_weight)
-        .map(r => [r[0], r[1]+' ', r[2]])
-        .sort((a, b) => b[2] - a[2])
-        .slice(0, max_links);
-    if (!rows.length) {
-        return webappMessages.displayFatalError('Nothing to display.');
-    }
+        .map(r => [r[0], r[1], r[2]]);
     data.addRows(rows);
     let chart = new google.visualization.Sankey(document.getElementById('sankey'));
     chart.draw(data, {});

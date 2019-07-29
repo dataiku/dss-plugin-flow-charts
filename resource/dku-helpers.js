@@ -1,6 +1,6 @@
 /*
 Helper function to query webapp backend with a default implementation for error handling
-v 1.0.1
+v 1.1.0
 */
 
 const webappBackend = (function() {

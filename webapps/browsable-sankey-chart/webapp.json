@@ -2,59 +2,38 @@
     "meta": {
         "label": "Sankey: browsable",
         "description": "Browsable chart showing predecessors and successors of a given state",
-        "icon": "icon-bar-chart"
+        "icon": "icon-random"
     },
     "baseType": "STANDARD",
     "hasBackend": "false",
-    "params": [
-        {
-            "name": "dataset",
-            "type": "DATASET",
-            "label": "Dataset",
-            "description": "",
-            "mandatory": true,
-            "canSelectForeign": true
-        },
-        {
-            "name": "from_col",
-            "type": "DATASET_COLUMN",
-            "datasetParamName": "dataset",
-            "label": "Origin column",
-            "description": "",
-            "mandatory": true
-        },
-        {
-            "name": "to_col",
-            "type": "DATASET_COLUMN",
-            "datasetParamName": "dataset",
-            "label": "Destination column",
-            "description": "",
-            "mandatory": true
-        },
-        {
-            "name": "weight_col",
-            "type": "DATASET_COLUMN",
-            "datasetParamName": "dataset",
-            "label": "Weight column",
-            "description": "",
-            "mandatory": false
-        },
-        {
-            "name": "max_links",
-            "type": "INT",
-            "label": "Max number of links",
-            "defaultValue": 12,
-            "mandatory": false
-        },
-        {
-            "name": "min_weight",
-            "type": "INT",
-            "label": "Min weight",
-            "defaultValue": 0,
-            "mandatory": false
-        }
-    ],
-    "roles": [
-        {"type": "DATASET", "targetParamsKey": "dataset"}
-    ]
+    "chart" : {
+        "datasetParamName" : "dataset",
+        "topBar" : "STD_FORM",
+        "topBarParams" : [
+            {
+                "name": "from_col",
+                "type": "DATASET_COLUMN",
+                "datasetParamName": "dataset",
+                "label": "Origin column",
+                "description": "",
+                "mandatory": true
+            },
+            {
+                "name": "to_col",
+                "type": "DATASET_COLUMN",
+                "datasetParamName": "dataset",
+                "label": "Destination column",
+                "description": "",
+                "mandatory": true
+            },
+            {
+                "name": "weight_col",
+                "type": "DATASET_COLUMN",
+                "datasetParamName": "dataset",
+                "label": "Weight column",
+                "description": "",
+                "mandatory": false
+            }
+        ]
+    }
 }

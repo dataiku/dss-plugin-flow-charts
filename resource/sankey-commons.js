@@ -1,20 +1,21 @@
 let dataReady;
 let chartReady;
 
-function initSankey(onReady) {
+function initSankey(cfg, onReady) {
     try {
         dataiku.checkWebAppParameters();
     } catch (e) {
+        console.error(e);
         webappMessages.displayFatalError(e.message + ' Go to settings tab.');
         return;
     }
     
-    const cfg = dataiku.getWebAppConfig();
     const dataset = cfg['dataset'];
     const sampling = {};
     const from_col = cfg['from_col'];
     const to_col = cfg['to_col'];
     const weight_col = cfg['weight_col'];
+    console.warn('WEIGHT COL: ', weight_col); 
     const max_links = cfg['max_links'] || 12;
     const min_weight = cfg['min_weight'] || 0;
     let allRows;

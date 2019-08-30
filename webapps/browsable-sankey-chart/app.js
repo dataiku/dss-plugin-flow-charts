@@ -1,4 +1,5 @@
 let allRows;
+let webAppConfig = dataiku.getWebAppConfig()['webAppConfig'];
 
 function getMostCommonSource() {
     let counts = {}
@@ -11,9 +12,8 @@ function getMostCommonSource() {
 
 
 function loadState(stateName) {
-    const cfg = dataiku.getWebAppConfig();
-    const max_links = cfg['max_links'] || 12;
-    const min_weight = cfg['min_weight'] || 0;
+    const max_links = webAppConfig['max_links'] || 12;
+    const min_weight = webAppConfig['min_weight'] || 0;
     
     let data = new google.visualization.DataTable();
     data.addColumn('string', 'From');
@@ -48,8 +48,38 @@ function loadState(stateName) {
         }
     });
 }
-    
-initSankey( (data) => {
+
+let cfg = dataiku.getWebAppConfig()['webAppConfig'];
+initSankey(cfg, (data) => {
     allRows = data;
     loadState(getMostCommonSource()); 
+});
+
+
+// window.addEventListener('message', function(event) {
+//     if (event.data) {
+//         let chartDef = JSON.parse(event.data);
+//         let webAppConfig = chartDef['webAppConfig']
+//         console.warn('got cfg from form:', webAppConfig);
+//         dataiku.resolvePluginConfig(webAppConfig, function(data) {
+//             const event = new Event('webAppConfigChanged');
+//             event.data = data;
+//             window.dispatchEvent(event);
+//         }, function(data) {console.warn("faile to resolve", data)})
+       
+//     }
+// });
+
+window.addEventListener('message', function(event) {
+   if (event.data) {
+       let cfg = JSON.parse(event.data)['webAppConfig'];
+       dataiku.resolvePluginConfig(cfg, function(data) {
+            initSankey(cfg, (data) => {
+                allRows = data;
+                loadState(getMostCommonSource()); 
+            });
+       }, function(data) {
+           console.warn("faile to resolve", data);
+       })
+   }
 });

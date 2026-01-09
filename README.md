@@ -8,18 +8,6 @@ The charts are based on the [Google Charts library](https://developers.google.co
 
 ![An example of a sankey chart.](_img/example.png)
 
-## Plugin information
-
-|  |  |
-|---|---|
-| Version | 0.1.1 |
-| Author | Dataiku (Joachim ZENTICI, Du PHAN) |
-| Released | 2019-11-11 |
-| Last updated | 2019-11-11 |
-| License | MIT License |
-| Source code | [Github](https://github.com/dataiku/dss-plugin-flow-charts) |
-| Reporting issues | [Github](https://github.com/dataiku/dss-plugin-flow-charts/issues) |
-
 
 ## Description
 
